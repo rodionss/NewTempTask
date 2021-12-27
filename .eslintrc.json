@@ -1,0 +1,38 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "prettier",
+    "plugin:prettier/recommended",
+    "eslint-config-prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", {"semi":  false}],
+    "no-use-before-define": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "enum",
+        "format": ["UPPER_CASE", "PascalCase", "snake_case"]
+      }
+    ]
+  }
+}

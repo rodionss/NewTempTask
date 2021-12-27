@@ -1,0 +1,20 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+<rect
+  x="8.46448"
+  y="7.05029"
+  width="12"
+  height="2"
+  rx="1"
+  transform="rotate(45 8.46448 7.05029)"
+  fill="white"
+/>
+<rect
+  x="7.05029"
+  y="15.5356"
+  width="12"
+  height="2"
+  rx="1"
+  transform="rotate(-45 7.05029 15.5356)"
+  fill="white"
+/>
+</svg>
