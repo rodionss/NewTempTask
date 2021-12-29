@@ -1,20 +1,24 @@
 import styled from 'styled-components/native'
 import { Link, Text } from '@components/main'
 import { THEME } from '../../../../../const'
+import { Image } from 'react-native'
 
 export const Wrapper = styled.View`
-  position: relative;
-  border-radius: 32px;
-  background: #1f1f1f;
-  padding: 16px;
-  margin: 20px;
-`
-
-export const Container = styled.View`
-  flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #111313;
+  z-index: 9998;
+  position: relative;
+  border-radius: 32px;
+  background-color: #1f1f1f;
+  padding: 16px;
+  height: 570px;
+  margin: auto 20px;
+`
+export const BackgroundBlurImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
 `
 
 export const RoundButton = styled(Link)`

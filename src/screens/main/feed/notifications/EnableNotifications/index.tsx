@@ -4,6 +4,7 @@ import { assetList } from '@assets/index'
 import { PrimaryButton } from '@components/buttons'
 import { Notifications } from 'react-native-notifications'
 import { useAnalytics } from '@utils/functions'
+
 import {
   Wrapper,
   RoundButton,
@@ -16,6 +17,7 @@ import {
   Item,
   SmallText,
   Container,
+  BackgroundBlurImage,
 } from './atoms'
 
 type Props = {
@@ -63,38 +65,39 @@ function EnableNotifications({ onClosePress }: Props) {
   }
 
   return (
-    <Container>
-      <Wrapper>
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <Title>Don't miss</Title>
+    <>
+      <BackgroundBlurImage source={assetList.backgroundBlur} />
+        <Wrapper>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          <Title>Don't miss</Title>
         <ItemsWrapper>
-          {data.map(({ icon, title, description }) => (
-            <Item>
-              <Icon source={icon} />
-              <RightSide>
-                <ItemTitle>{title}</ItemTitle>
-                <Description>{description}</Description>
-              </RightSide>
-            </Item>
-          ))}
-        </ItemsWrapper>
-        <PrimaryButton
-          text='Enable notifications'
-          height={56}
-          onPress={handlePress}
-          containerStyle={{ borderRadius: 24 }}
-          size='small'
-        />
-        <SmallText>
-          We promise to send only useful notifications. But if you get bored –
-          just turn them off ^_^
-        </SmallText>
+            {data.map(({ icon, title, description }) => (
+              <Item>
+                <Icon source={icon} />
+                <RightSide>
+                  <ItemTitle>{title}</ItemTitle>
+                  <Description>{description}</Description>
+                </RightSide>
+              </Item>
+            ))}
+          </ItemsWrapper>
+          <PrimaryButton
+            text='Enable notifications'
+            height={56}
+            onPress={handlePress}
+            containerStyle={{ borderRadius: 24 }}
+            size='small'
+          />
+          <SmallText>
+            We promise to send only useful notifications. But if you get bored –
+            just turn them off ^_^
+          </SmallText>
 
-        <RoundButton onPress={onClosePress}>
-          <CloseIcon source={assetList.crossIcon} />
-        </RoundButton>
-      </Wrapper>
-    </Container>
+          <RoundButton onPress={onClosePress}>
+            <CloseIcon source={assetList.crossIcon} />
+          </RoundButton>
+        </Wrapper>
+    </>
   )
 }
 

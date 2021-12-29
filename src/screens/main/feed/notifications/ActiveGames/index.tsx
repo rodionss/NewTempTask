@@ -12,6 +12,7 @@ import Carousel from 'react-native-snap-carousel'
 import { useSelector } from 'react-redux'
 import { StackActions } from 'react-navigation'
 import { useNavigation, useIsFocused } from 'react-navigation-hooks'
+import ActivityInformation from '@screens/main/feed/notifications/ActivityInformation'
 import { handleErrors } from '../../../../../aspects'
 import {
   Button,
@@ -49,6 +50,7 @@ function ActiveGames({ onNotificationIconPress }: Props) {
   const token = useSelector(getToken)
 
   const [loading, setLoading] = useState(true)
+  const [closeInfo, setCloseInfo] = useState(false)
   const [activeGames, setActiveGames] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [view, setView] = useState(View.Inspired)
@@ -126,13 +128,25 @@ function ActiveGames({ onNotificationIconPress }: Props) {
         <>
           <EmptyState />
           <Drawer>
-            <Title>No active games yet</Title>
-            <Description>Create games yourself and stay tuned here</Description>
-            <PrimaryButton
-              full
-              onPress={onCreateGamePress}
-              text='CREATE GAME'
-            />
+            {closeInfo ? (
+              <>
+                <Title>No active games yet</Title>
+                <Description>
+                  Create games yourself and stay tuned here
+                </Description>
+                <PrimaryButton
+                  full
+                  onPress={onCreateGamePress}
+                  text='CREATE GAME'
+                />
+              </>
+            ) : (
+              <ActivityInformation
+                onClosePress={() => {
+                  setCloseInfo(true)
+                }}
+              />
+            )}
           </Drawer>
         </>
       )}
