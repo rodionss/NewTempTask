@@ -31,6 +31,9 @@ export default {
   appLogo: require('./icons/logo.png'),
   qrCodeBorder: require('./icons/qr-code-border.png'),
   avatarFallbackIcon: require('./icons/avatar-fallback-icon.png'),
+  ringIcon: require('./icons/ring.png'),
+
+  backgroundBlur: require('./images/backgroud-blur.jpeg'),
 
   avatarIconTutorial: require('./icons/avatar-tutorial-icon.png'),
   bioIconTutorial: require('./icons/bio-tutorial-icon.png'),
@@ -43,6 +46,10 @@ export default {
   inviteFriends: require('./icons/invite-friends-icon.png'),
   tagFriends: require('./icons/tag-friends-icon.png'),
   saveVideo: require('./icons/save-video-icon.png'),
+
+
+  activityPeople: require('./images/activity-people-image.png'),
+  activitySmile: require('./images/activity-smile-image.png'),
 
   likeEmojiIcon: require('./icons/like-icon.png'),
   lolEmojiIcon: require('./icons/lol-icon.png'),
@@ -64,6 +71,7 @@ export default {
   regOnboarding: require('./images/reg_onboarding.jpg'),
   regOnboardingBP: require('./images/reg_onboarding_bp.jpg'),
   onboardingMessages: require('./images/onboarding_messages.png'),
+  backgroundImageDigest: require('./images/background-image-digest.png'),
 
   tutorialInvite: require('./images/tutorial_invite.png'),
   toPlayPlaceholder: require('./images/to_play_placeholder.png'),

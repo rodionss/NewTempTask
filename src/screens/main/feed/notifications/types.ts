@@ -7,7 +7,7 @@ export enum View {
 }
 
 export enum NotificationType {
-  FollowingRequest = 'following_request',
+  FollowingRequest = 'following_regitquest',
   Follower = 'started_follow',
   Invite = 'invited_to_challenge',
   Tag = 'tagged_in_challenge',

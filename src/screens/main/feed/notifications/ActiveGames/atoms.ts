@@ -5,7 +5,7 @@ import { Link, Text } from '@components/main'
 import { STATUS_BAR_HEIGHT } from '@utils/functions'
 import { THEME } from '../../../../../const'
 
-const DRAWER_HEIGHT = Dimensions.get('window').height / 2
+const DRAWER_HEIGHT = Dimensions.get('window').height / 2 + 200
 export const DRAWER_ACTIVE_HEIGHT_COLLAPSED =
   (Dimensions.get('window').height / 11) * 7
 const DRAWER_ACTIVE_HEIGHT_EXPANDED =
@@ -39,12 +39,12 @@ export const EmptyState = styled.Image.attrs({
 export const Drawer = styled.View`
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
-  background-color: #1b1d1d;
+  background: rgba(17, 19, 19, 1);
   justify-content: center;
   align-items: center;
   padding: 15px;
   height: ${DRAWER_HEIGHT};
-  top: -100px;
+  top: -200px;
 `
 
 export const DrawerActive = styled.View<Collapsed>`
