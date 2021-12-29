@@ -15,9 +15,10 @@ import { View } from './types'
 type ActivityViewProps = {
   view: View
   setView: (view: View) => void
+  showTutorial: boolean
 }
 
-function ActivityView({ view, setView }: ActivityViewProps) {
+function ActivityView({ view, setView, showTutorial }: ActivityViewProps) {
   const openNotifications = () => setView(View.Notifications)
   const openActiveGames = () => setView(View.ActiveGames)
 
@@ -46,7 +47,7 @@ function ActivityView({ view, setView }: ActivityViewProps) {
         />
       )
     case View.ActiveGames:
-      return <ActiveGames onNotificationIconPress={openNotifications} />
+      return <ActiveGames onNotificationIconPress={openNotifications} showTutorial={showTutorial}/>
     default:
       return null
   }
@@ -66,12 +67,11 @@ function Notifications() {
       }
     })
   }, [])
-
   if (showTutorial) {
     return <EnableNotifications onClosePress={() => setShowTutorial(false)} />
   }
 
-  return <ActivityView view={view} setView={setView} />
+  return <ActivityView view={view} setView={setView} showTutorial={showTutorial}/>
 }
 
 export default Notifications

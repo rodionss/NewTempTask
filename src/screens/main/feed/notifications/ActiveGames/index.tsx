@@ -39,9 +39,10 @@ enum View {
 
 type Props = {
   onNotificationIconPress: () => void
+  showTutorial:boolean
 }
 
-function ActiveGames({ onNotificationIconPress }: Props) {
+function ActiveGames({ onNotificationIconPress, showTutorial }: Props) {
   const carouselRef = useRef()
   const navigation = useNavigation()
   const isFocused = useIsFocused()
@@ -128,7 +129,7 @@ function ActiveGames({ onNotificationIconPress }: Props) {
         <>
           <EmptyState />
           <Drawer>
-            {closeInfo ? (
+            {closeInfo || showTutorial ? (
               <>
                 <Title>No active games yet</Title>
                 <Description>
